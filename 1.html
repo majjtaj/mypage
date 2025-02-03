@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 1</title>
+    <title>Gallery</title>
     <style>
         body {
             background-color: #C04050;
@@ -11,16 +11,83 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
-        a {
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
+        .gallery {
+            display: grid;
+            gap: 40px;
+            justify-content: center;
+            max-width: 800px;
+            margin: auto;
         }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .slideshow {
+            position: relative;
+        }
+        .slideshow img {
+            display: none;
+        }
+        .slideshow img.active {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
     </style>
 </head>
 <body>
-    <h1>Welcome to Page 1!</h1>
-    <p>This is a new page linked from your main site.</p>
+    <h1>Gallery</h1>
+    
+    <div class="gallery">
+        <!-- Normal Image -->
+        <div class="image-container">
+            <img src="image1.jpg" alt="Description of image 1">
+            <p>Description for image 1</p>
+        </div>
+        
+        <!-- Slideshow -->
+        <div class="image-container slideshow">
+            <button class="arrow prev" onclick="prevSlide(0)">&#10094;</button>
+            <img src="slide1.jpg" class="active" alt="Slide 1">
+            <img src="slide2.jpg" alt="Slide 2">
+            <img src="slide3.jpg" alt="Slide 3">
+            <button class="arrow next" onclick="nextSlide(0)">&#10095;</button>
+            <p>Slideshow description</p>
+        </div>
+    </div>
+    
     <a href="index.html">⬅ Back to Home</a>
+
+    <script>
+        function nextSlide(index) {
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            let nextIndex = (activeIndex + 1) % slides.length;
+            slides[nextIndex].classList.add('active');
+        }
+
+        function prevSlide(index) {
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
+            slides[prevIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
