@@ -52,6 +52,32 @@
         	cursor: pointer;
         	float: right;
     	}
+    	/* Add the button styles here */
+    	.btn {
+        	background: #d93434;
+        	background-image: -webkit-linear-gradient(top, #d93434, #ffdbdb);
+        	background-image: -moz-linear-gradient(top, #d93434, #ffdbdb);
+        	background-image: -ms-linear-gradient(top, #d93434, #ffdbdb);
+        	background-image: -o-linear-gradient(top, #d93434, #ffdbdb);
+        	background-image: linear-gradient(to bottom, #d93434, #ffdbdb);
+        	-webkit-border-radius: 28;
+        	-moz-border-radius: 28;
+        	border-radius: 28px;
+        	font-family: Courier New;
+        	color: #faf5fa;
+        	font-size: 19px;
+        	padding: 11px 20px 7px 20px;
+        	text-decoration: none;
+    	}
+    	.btn:hover {
+        	background: #d93434;
+        	background-image: -webkit-linear-gradient(top, #d93434, #9e0000);
+        	background-image: -moz-linear-gradient(top, #d93434, #9e0000);
+        	background-image: -ms-linear-gradient(top, #d93434, #9e0000);
+        	background-image: -o-linear-gradient(top, #d93434, #9e0000);
+        	background-image: linear-gradient(to bottom, #d93434, #9e0000);
+        	text-decoration: none;
+    	}
 	</style>
 </head>
 <body>
@@ -62,7 +88,8 @@
     	<button onclick="submitComment()">Submit</button>
 	</div>
 	<div class="comments" id="comments"></div>
-	<a href="index.html">⬅ Back to Home</a>
+	<!-- Replace the <a> tag with a styled button -->
+	<a href="index.html" class="btn">⬅ Back to Home</a>
 
 	<script>
     	const firebaseConfig = {
@@ -110,4 +137,3 @@
 	</script>
 </body>
 </html>
-
