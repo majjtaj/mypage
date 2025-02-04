@@ -64,49 +64,54 @@
     <div class="comments" id="comments"></div>
     <a href="index.html">⬅ Back to Home</a>
 
-    <script>
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com/",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database().ref("guestbook");
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
-        function submitComment() {
-            let name = document.getElementById("name").value;
-            let message = document.getElementById("message").value;
-            if (name && message) {
-                let newComment = db.push();
-                newComment.set({ name, message });
-                document.getElementById("name").value = "";
-                document.getElementById("message").value = "";
-            }
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAQjtU9aaDuNzLycnFScXQBS9KrkzgsY2Q",
+        authDomain: "maja1website.firebaseapp.com",
+        databaseURL: "https://maja1website-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "maja1website",
+        storageBucket: "maja1website.firebasestorage.app",
+        messagingSenderId: "97240961409",
+        appId: "1:97240961409:web:6004d67b9377ed37841880"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database().ref("guestbook");
+
+    function submitComment() {
+        let name = document.getElementById("name").value;
+        let message = document.getElementById("message").value;
+        if (name && message) {
+            let newComment = db.push();
+            newComment.set({ name, message });
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
         }
+    }
 
-        function loadComments() {
-            db.on("value", snapshot => {
-                let commentsDiv = document.getElementById("comments");
-                commentsDiv.innerHTML = "";
-                snapshot.forEach(childSnapshot => {
-                    let comment = childSnapshot.val();
-                    let commentElement = document.createElement("div");
-                    commentElement.classList.add("comment");
-                    commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message} <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
-                    commentsDiv.appendChild(commentElement);
-                });
+    function loadComments() {
+        db.on("value", snapshot => {
+            let commentsDiv = document.getElementById("comments");
+            commentsDiv.innerHTML = "";
+            snapshot.forEach(childSnapshot => {
+                let comment = childSnapshot.val();
+                let commentElement = document.createElement("div");
+                commentElement.classList.add("comment");
+                commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message} <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
+                commentsDiv.appendChild(commentElement);
             });
-        }
+        });
+    }
 
-        function deleteComment(key) {
-            db.child(key).remove();
-        }
+    function deleteComment(key) {
+        db.child(key).remove();
+    }
 
-        loadComments();
-    </script>
+    loadComments();
+</script>
 </body>
 </html>
