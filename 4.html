@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@900&ital@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Den Hellig Plantemads Bibel</title>
+    <style>
+        body {
+            background-color: #C04050;
+            color: #880015;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .sidebar {
+            background-color: #880015;
+            color: white;
+            padding: 20px;
+            width: 250px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .sidebar h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        
+        .sidebar a:hover {
+            background-color: #C04050;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            background-color: #C04050;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #880015;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #C04050;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        .colored-banner {
+            background-color: #880015;
+            color: white;
+            padding: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back-to-top a {
+            text-decoration: none;
+            color: #C04050;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        .back-to-top a:hover {
+            background-color: #a03240;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a href="#vitaminA">Vitamin A</a>
+        <a href="#vitaminC">Vitamin C</a>
+        <a href="#iron">Iron</a>
+        <a href="#calcium">Calcium</a>
+        <a href="#magnesium">Magnesium</a>
+        <a href="#otherNutrients">Other Nutrients</a>
+    </div>
+
+    <div class="content">
+        <h1>Den Hellig Plantemads Bibel</h1>
+        <p class="intro-text">
+            En komplet og kompakt liste over alle dine bedste plantebaserede fødevarer for komplet og ernæringsrigtig kost som plejer sjæl, celler og jord.<br>
+            Det er mest bare for sjov. Det betyder, tag endelig hvad der står her seriøst, for det er det. Men lad være med at citer mig som kilde i din opgave.
+        </p>
+
+        <div id="vitaminA">
+            <div class="colored-banner">Vitamin A</div>
+            <p>Vitamin A is crucial for vision, immune function, and skin health. It's typically found in plant sources as provitamin A carotenoids, like beta-carotene.</p>
+            <table>
+                <tr>
+                    <th>Food Source</th>
+                    <th>Amount (per 100g)</th>
+                </tr>
+                <tr>
+                    <td>Sweet Potato</td>
+                    <td>192% DV</td>
+                </tr>
+                <tr>
+                    <td>Carrot</td>
+                    <td>184% DV</td>
+                </tr>
+                <tr>
+                    <td>Spinach</td>
+                    <td>105% DV</td>
+                </tr>
+            </table>
+            <p>Vitamin A also supports the immune system and can help maintain healthy skin.</p>
+        </div>
+
+        <div id="vitaminC">
+            <div class="colored-banner">Vitamin C</div>
+            <p>Vitamin C is important for the growth and repair of tissues, and it's also a powerful antioxidant. It is commonly found in fruits and vegetables.</p>
+            <table>
+                <tr>
+                    <th>Food Source</th>
+                    <th>Amount (per 100g)</th>
+                </tr>
+                <tr>
+                    <td>Orange</td>
+                    <td>89% DV</td>
+                </tr>
+                <tr>
+                    <td>Broccoli</td>
+                    <td>135% DV</td>
+                </tr>
+                <tr>
+                    <td>Bell Pepper</td>
+                    <td>190% DV</td>
+                </tr>
+            </table>
+            <p>Vitamin C also aids in the absorption of iron and boosts the immune system.</p>
+        </div>
+
+        <div id="iron">
+            <div class="colored-banner">Iron</div>
+            <p>Iron is necessary for the production of hemoglobin, which helps red blood cells carry oxygen throughout the body.</p>
+            <table>
+                <tr>
+                    <th>Food Source</th>
+                    <th>Amount (per 100g)</th>
+                </tr>
+                <tr>
+                    <td>Lentils</td>
+                    <td>37% DV</td>
+                </tr>
+                <tr>
+                    <td>Tofu</td>
+                    <td>15% DV</td>
+                </tr>
+                <tr>
+                    <td>Chickpeas</td>
+                    <td>29% DV</td>
+                </tr>
+            </table>
+            <p>Iron absorption can be enhanced when combined with vitamin C-rich foods.</p>
+        </div>
+
+        <!-- Additional Sections for Other Nutrients... -->
+
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
