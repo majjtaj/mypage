@@ -124,7 +124,13 @@
                 	let comment = childSnapshot.val();
                 	let commentElement = document.createElement("div");
                 	commentElement.classList.add("comment");
-                	commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message} <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
+                	firebase.auth().onAuthStateChanged(user => {
+                            if (user && user.uid === "JMEPqiJbRMb7y3fRGFdKbYygyp72") {
+                                commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message} <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
+                            } else {
+                                commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message}`;
+                            }
+                        });
                 	commentsDiv.appendChild(commentElement);
             	});
         	});
