@@ -19,39 +19,34 @@
         }
         
         .sidebar {
-            background-color: #880015;
-            color: white;
-            padding: 20px;
-            width: 250px;
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px; /* Narrower sidebar */
             height: 100%;
-            overflow-y: auto;
-        }
-        
-        .sidebar h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            margin: 5px 0;
-            font-weight: bold;
-        }
-        
-        .sidebar a:hover {
-            background-color: #C04050;
+            background-color: #336699; /* Medium blue */
+            padding-top: 20px;
+            color: #f0f8ff; /* Light blue text */
+            font-family: 'Times New Roman', serif;
+            font-weight: normal;
+            font-style: normal;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-left: 20px;
         }
 
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-            overflow-y: auto;
-            flex: 1;
+        .sidebar a {
+            text-decoration: none;
+            color: #f0f8ff; /* Light blue text */
+            padding: 10px 0;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
         }
+        .sidebar a:hover {
+            background-color: #003366; /* Darker blue on hover */
+        }
+
 
         h1 {
             font-size: 2.5rem;
