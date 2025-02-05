@@ -106,15 +106,29 @@
     	const db = firebase.database().ref("guestbook");
 
     	function submitComment() {
-        	let name = document.getElementById("name").value;
-        	let message = document.getElementById("message").value;
-        	if (name && message) {
-            	let newComment = db.push();
-            	newComment.set({ name, message });
-            	document.getElementById("name").value = "";
-            	document.getElementById("message").value = "";
-        	}
-    	}
+    let name = document.getElementById("name").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (!name || !message) {
+        alert("Please enter both a name and a comment.");
+        return;
+    }
+
+    if (!firebase.apps.length) {
+        alert("Firebase is not initialized.");
+        return;
+    }
+
+    let newComment = db.push();
+    newComment.set({ name, message })
+        .then(() => {
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch(error => {
+            alert("Error submitting comment: " + error.message);
+        });
+}
 
     	function loadComments() {
         	db.on("value", snapshot => {
