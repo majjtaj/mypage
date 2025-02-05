@@ -1,160 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Guestbook</title>
-	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
 
-	<style>
-    	body {
-        	background-color: #C04050;
-        	color: white;
-        	text-align: center;
-        	font-family: Arial, sans-serif;
-    	}
-    	.comment-box {
-        	margin: 20px auto;
-        	max-width: 500px;
-        	display: flex;
-        	flex-direction: column;
-        	gap: 10px;
-    	}
-    	input, textarea {
-        	padding: 10px;
-        	border-radius: 5px;
-        	border: none;
-    	}
-    	button {
-        	padding: 10px;
-        	background: white;
-        	border: none;
-        	color: #C04050;
-        	font-weight: bold;
-        	cursor: pointer;
-    	}
-    	.comments {
-        	margin-top: 20px;
-    	}
-    	.comment {
-        	background: rgba(255, 255, 255, 0.2);
-        	padding: 10px;
-        	border-radius: 5px;
-        	margin: 10px auto;
-        	max-width: 500px;
-        	text-align: left;
-    	}
-    	.delete-btn {
-        	background: red;
-        	color: white;
-        	padding: 5px;
-        	border: none;
-        	cursor: pointer;
-        	float: right;
-    	}
-    	/* Add the button styles here */
-    	.btn {
-        	background: #d93434;
-        	background-image: -webkit-linear-gradient(top, #d93434, #ffdbdb);
-        	background-image: -moz-linear-gradient(top, #d93434, #ffdbdb);
-        	background-image: -ms-linear-gradient(top, #d93434, #ffdbdb);
-        	background-image: -o-linear-gradient(top, #d93434, #ffdbdb);
-        	background-image: linear-gradient(to bottom, #d93434, #ffdbdb);
-        	-webkit-border-radius: 28;
-        	-moz-border-radius: 28;
-        	border-radius: 28px;
-        	font-family: Courier New;
-        	color: #faf5fa;
-        	font-size: 19px;
-        	padding: 11px 20px 7px 20px;
-        	text-decoration: none;
-    	}
-    	.btn:hover {
-        	background: #d93434;
-        	background-image: -webkit-linear-gradient(top, #d93434, #9e0000);
-        	background-image: -moz-linear-gradient(top, #d93434, #9e0000);
-        	background-image: -ms-linear-gradient(top, #d93434, #9e0000);
-        	background-image: -o-linear-gradient(top, #d93434, #9e0000);
-        	background-image: linear-gradient(to bottom, #d93434, #9e0000);
-        	text-decoration: none;
-    	}
-	</style>
-</head>
-<body>
-	<h1>Guestbook</h1>
-	<div class="comment-box">
-    	<input type="text" id="name" placeholder="Your Name">
-    	<textarea id="message" placeholder="Your Comment"></textarea>
-    	<button onclick="submitComment()">Submit</button>
-	</div>
-	<div class="comments" id="comments"></div>
-	<!-- Replace the <a> tag with a styled button -->
-	<a href="index.html" class="btn">⬅ Back to Home</a>
+    <style>
+        body {
+            background-color: #C04050;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .comment-box {
+            margin: 20px auto;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px;
+            background: white;
+            border: none;
+            color: #C04050;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+       
 
-	<script>
-    	const firebaseConfig = {
-        	apiKey: "AIzaSyAQjtU9aaDuNzLycnFScXQBS9KrkzgsY2Q",
-        	authDomain: "maja1website.firebaseapp.com",
-        	databaseURL: "https://maja1website-default-rtdb.europe-west1.firebasedatabase.app",
-        	projectId: "maja1website",
-        	storageBucket: "maja1website.firebasestorage.app",
-        	messagingSenderId: "97240961409",
-        	appId: "1:97240961409:web:6004d67b9377ed37841880"
-    	};
-    	firebase.initializeApp(firebaseConfig);
-    	const db = firebase.database().ref("guestbook");
-
-    	function submitComment() {
-    let name = document.getElementById("name").value.trim();
-    let message = document.getElementById("message").value.trim();
-
-    if (!name || !message) {
-        alert("Please enter both a name and a comment.");
-        return;
-    }
-
-    if (!firebase.apps.length) {
-        alert("Firebase is not initialized.");
-        return;
-    }
-
-    let newComment = db.push();
-    newComment.set({ name, message })
-        .then(() => {
-            document.getElementById("name").value = "";
-            document.getElementById("message").value = "";
-        })
-        .catch(error => {
-            alert("Error submitting comment: " + error.message);
-        });
-}
-
-    	function loadComments() {
-        	db.on("value", snapshot => {
-            	let commentsDiv = document.getElementById("comments");
-            	commentsDiv.innerHTML = "";
-            	snapshot.forEach(childSnapshot => {
-                	let comment = childSnapshot.val();
-                	let commentElement = document.createElement("div");
-                	commentElement.classList.add("comment");
-                	firebase.auth().onAuthStateChanged(user => {
-                            if (user && user.uid === "JMEPqiJbRMb7y3fRGFdKbYygyp72") {
-                                commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message} <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
-                            } else {
-                                commentElement.innerHTML = `<strong>${comment.name}</strong>: ${comment.message}`;
-                            }
-                        });
-                	commentsDiv.appendChild(commentElement);
-            	});
-        	});
-    	}
-
-    	function deleteComment(key) {
-        	db.child(key).remove();
-    	}
-
-    	loadComments();
-	</script>
-</body>
-</html>
