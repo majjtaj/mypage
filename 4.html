@@ -225,6 +225,17 @@
         </div>
     </div>
 
+    <!-- Add the script just before the closing </body> tag -->
+    <script>
+        // Fetch the content of the text file and insert it into the page
+        fetch('SNF.txt')  <!-- Replace 'yourfile.txt' with the actual path to your .txt file -->
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('vitaminA').innerHTML += data;  // Adds the content inside the relevant section
+            })
+            .catch(error => console.error('Error loading the file:', error));
+    </script>
+
 </body>
 </html>
 
