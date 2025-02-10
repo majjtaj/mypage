@@ -1,4 +1,4 @@
-<p>**Grøntsager**</p>
+<p><strong>Grøntsager</strong></p>
 <ul>
   <li>Sød kartoffel</li>
   <li>Græskar of Butternut Squash</li>
@@ -17,7 +17,7 @@
 
 <p>Jeg får nok lyst til at uddybe senere</p>
 
-<p>**Bælgfrugter**</p>
+<p><strong>Bælgfrugter</strong></p>
 <ul>
   <li>Kikærter</li>
   <li>Linser</li>
@@ -26,7 +26,7 @@
 
 <p>Altså alle linser, men jeg holder mig mest til beluga linser og splittede røde linser. Og altså alle bønner, men kikærter kan noget helt særligt: .... Og butterbeans er på listen fordi de smager helt vildt godt </p>
 
-<p>**Festkilder**</p>
+<p><strong>Festkilder</strong></p>
 <p>Hov, mener selvfølgelig feDt*kilder</p>
 
 <ul>
@@ -37,7 +37,7 @@
   <li>Solsikkefrø og græskarkerner</li>
 </ul>
 
-<p>**kornprodukter**</p>
+<p><strong>kornprodukter</strong></p>
 <p>Jeg er egentlig ikke helt sikker på om de klassificerer som korn, men det er sådan jeg ser dem, så her bliver de placeret </p>
 
 <ul>
@@ -54,6 +54,3 @@
 <p>Og bær</p>
 <p>Og paranødder for selenium</p>
 <p>og hørfrø, chiafrø og valnødder for omega 3, dem spiser vi hver dag!</p>
-
-
-
