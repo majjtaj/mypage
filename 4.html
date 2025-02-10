@@ -12,7 +12,6 @@
             font-family: 'Times New Roman', serif;
             font-weight: normal;
             font-style: normal;
-
             display: flex;
             height: 100vh;
             overflow: hidden;
@@ -147,7 +146,27 @@
         <div id="Særligtnæringsrigefødevarer">
             <div class="colored-banner">Særligt næringsrige fødevarer</div>
             <p>Der er selvfølgelig gode ting i mange ting. Men så er der nogle ting som har mange gode ting. Her er en lettere tilfældig, men altså ikke rigtig tilfældig liste over nogle fødevarer jeg prøver at få med i min kurv lidt oftere end andet. Det er for guds skyld ikke fordi man ikke skal spise andet. Men måske kan man spise lidt mere af dette.</p>
-        <script>
+
+            <!-- This is where the text will be inserted -->
+            <div id="my-text-container"></div>  <!-- Insert content from the txt file here -->
+        </div>
+
+        <div id="AntioxidanterAAAAMEN">
+            <div class="colored-banner">Anti-oxidanter AAAAMEN</div>
+            <p>*Er på trapperne*</p>
+        </div>
+
+        <div id="ABCmadleksikon">
+            <div class="colored-banner">ABC Mad-leksikon</div>
+            <p>*er på trapperne* </p>
+        </div>
+
+        <div class="back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+
+    <script>
         function loadTextFile() {
             const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
 
@@ -163,39 +182,7 @@
         }
 
         loadTextFile(); // Call the function to load the text file
-    </script>    
-        </div>
-
-        <div id="AntioxidanterAAAAMEN">
-            <div class="colored-banner">Anti-oxidanter AAAAMEN</div>
-            <p>*Er på trapperne*</p>
-        </div>
-
-        <div id="ABCmadleksikon">
-            <div class="colored-banner">ABC Mad-leksikon</div>
-            <p>*er på trapperne* </p>
-           
-        </div>
-
-        <!-- Additional Sections for Other Nutrients... -->
-
-        <div class="back-to-top">
-            <a href="#top">Back to Top</a>
-        </div>
-    </div>
-
-    <!-- Add the script just before the closing </body> tag -->
-    <script>
-        // Fetch the content of the text file and insert it into the page
-        fetch('SNF.txt')  <!-- Replace 'yourfile.txt' with the actual path to your .txt file -->
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('vitaminA').innerHTML += data;  // Adds the content inside the relevant section
-            })
-            .catch(error => console.error('Error loading the file:', error));
     </script>
 
 </body>
 </html>
-
-
