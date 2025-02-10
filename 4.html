@@ -12,9 +12,11 @@
             font-family: 'Times New Roman', serif;
             font-weight: normal;
             font-style: normal;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
             display: flex;
-            height: 100vh;
-            overflow: hidden;
+            flex-direction: column;
+            min-height: 100vh; /* Allow the page to scroll */
         }
         
         .sidebar {
@@ -49,8 +51,9 @@
         .content {
             margin-left: 200px; /* Adjusted to give space for the sidebar */
             padding: 20px;
+            flex-grow: 1; /* Allow content to take remaining space */
             overflow: auto;
-            height: 100vh; /* Full height content */
+            padding-bottom: 60px; /* Add space for buttons at the bottom */
         }
 
         h1 {
@@ -106,31 +109,12 @@
             margin-bottom: 30px;
         }
 
-        .back-to-top {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .back-to-top a {
-            text-decoration: none;
-            color: #C04050;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            background-color: white;
-        }
-
-        .back-to-top a:hover {
-            background-color: #a03240;
-            color: white;
-        }
-
-                .back-to-home {
+        .back-to-top, .back-to-home {
             text-align: center;
             margin-top: 30px;
         }
 
-        .back-to-home a {
+        .back-to-top a, .back-to-home a {
             text-decoration: none;
             color: #C04050;
             font-weight: bold;
@@ -140,14 +124,17 @@
             transition: background-color 0.3s;
         }
 
-        .back-to-home a:hover {
+        .back-to-top a:hover, .back-to-home a:hover {
             background-color: #a03240;
             color: white;
+        }
+
+        .back-to-home {
+            margin-top: 50px; /* Ensure it appears below the back-to-top button */
         }
     </style>
 </head>
 <body id="top">    
-<body>
 
     <div class="sidebar">
         <h2>Menu</h2>
@@ -167,7 +154,6 @@
         <div id="Særligtnæringsrigefødevarer">
             <div class="colored-banner">Særligt næringsrige fødevarer</div>
             <p>Der er selvfølgelig gode ting i mange ting. Men så er der nogle ting som har mange gode ting. Her er en lettere tilfældig, men altså ikke rigtig tilfældig liste over nogle fødevarer jeg prøver at få med i min kurv lidt oftere end andet. Det er for guds skyld ikke fordi man ikke skal spise andet. Men måske kan man spise lidt mere af dette.</p>
-
             <!-- This is where the text will be inserted -->
             <div id="my-text-container"></div>  <!-- Insert content from the txt file here -->
         </div>
@@ -185,29 +171,26 @@
         <div class="back-to-top">
             <a href="#top">Back to Top</a>
         </div>
+        
+        <div class="back-to-home">
+            <a href="#top">Back to Home</a>
+        </div>
     </div>
 
     <script>
         function loadTextFile() {
-    const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
-
-    fetch(filePath)
-        .then(response => response.text())
-        .then(text => {
-            // Use innerHTML instead of textContent to render HTML tags
-            document.getElementById('my-text-container').innerHTML = text;
-        })
-        .catch(error => {
-            console.error('Error loading file:', error);
-        });
-}
-
-loadTextFile(); // Call the function to load the text file
-
+            const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
+            fetch(filePath)
+                .then(response => response.text())
+                .then(text => {
+                    document.getElementById('my-text-container').innerHTML = text;
+                })
+                .catch(error => {
+                    console.error('Error loading file:', error);
+                });
+        }
+        loadTextFile(); // Call the function to load the text file
     </script>
-<div class="back-to-home">
-    <a href="#top">Back to Home</a>
-</div>
     
 </body>
 </html>
