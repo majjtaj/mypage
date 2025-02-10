@@ -90,66 +90,83 @@
     <!-- Back to Home button -->
     <button class="home-button" onclick="goHome()">Back to Home</button>
 
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAQjtU9aaDuNzLycnFScXQBS9KrkzgsY2Q",
-            authDomain: "maja1website.firebaseapp.com",
-            databaseURL: "https://maja1website-default-rtdb.europe-west1.firebasedatabase.app",
-            projectId: "maja1website",
-            storageBucket: "maja1website.firebasestorage.app",
-            messagingSenderId: "97240961409",
-            appId: "1:97240961409:web:6004d67b9377ed37841880"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.database().ref("guestbook");
 
-        // Load comments function
-        function loadComments() {
-            db.on("value", snapshot => {
-                let commentsDiv = document.getElementById("comments");
-                commentsDiv.innerHTML = "";
-                snapshot.forEach(childSnapshot => {
-                    let comment = childSnapshot.val();
-                    let commentElement = document.createElement("div");
-                    commentElement.classList.add("comment");
-                    commentElement.innerHTML = `
-                        <strong>${comment.name}</strong>: ${comment.message}`;
-                    commentsDiv.appendChild(commentElement); // Move this inside the loop
-                });
+<script>
+    // Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAQjtU9aaDuNzLycnFScXQBS9KrkzgsY2Q",
+        authDomain: "maja1website.firebaseapp.com",
+        databaseURL: "https://maja1website-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "maja1website",
+        storageBucket: "maja1website.firebasestorage.app",
+        messagingSenderId: "97240961409",
+        appId: "1:97240961409:web:6004d67b9377ed37841880"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database().ref("guestbook");
+
+    // Updated function to get current date and time (HH:MM format)
+    function getCurrentDateTime() {
+        let now = new Date();
+        let date = now.toLocaleDateString('en-GB');  // Formats as DD/MM/YYYY
+        let time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });  // Formats as HH:MM (no seconds)
+        return `${date} ${time}`;
+    }
+
+    // Load comments function
+    function loadComments() {
+        db.on("value", snapshot => {
+            let commentsDiv = document.getElementById("comments");
+            commentsDiv.innerHTML = "";
+            snapshot.forEach(childSnapshot => {
+                let comment = childSnapshot.val();
+                let commentElement = document.createElement("div");
+                commentElement.classList.add("comment");
+                commentElement.innerHTML = `
+                    <strong>${comment.name}</strong>: ${comment.message} 
+                    <br><small><i>Submitted on ${comment.timestamp}</i></small>`;
+                commentsDiv.appendChild(commentElement); // Move this inside the loop
             });
+        });
+    }
+
+    // Function to submit a new comment
+    function submitComment() {
+        let name = document.getElementById("name").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === "" || message === "") {
+            alert("Please enter both name and message.");
+            return;
         }
 
-        // Function to submit a new comment
-        function submitComment() {
-            let name = document.getElementById("name").value.trim();
-            let message = document.getElementById("message").value.trim();
+        let timestamp = getCurrentDateTime(); // Get current date and time
 
-            if (name === "" || message === "") {
-                alert("Please enter both name and message.");
-                return;
-            }
+        let newComment = db.push();
+        newComment.set({
+            name: name,
+            message: message,
+            timestamp: timestamp // Save the timestamp
+        })
+        .then(() => {
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch(error => {
+            alert("Error submitting comment: " + error.message);
+        });
+    }
 
-            let newComment = db.push();
-            newComment.set({ name, message })
-                .then(() => {
-                    document.getElementById("name").value = "";
-                    document.getElementById("message").value = "";
-                })
-                .catch(error => {
-                    alert("Error submitting comment: " + error.message);
-                });
-        }
+    // Function to go back to home
+    function goHome() {
+        window.location.href = "/";  // This can be changed to your homepage URL if different
+    }
 
-        // Function to go back to home
-        function goHome() {
-            window.location.href = "/";  // This can be changed to your homepage URL if different
-        }
+    // Load comments on page load
+    window.onload = function() {
+        loadComments();
+    };
+</script>
 
-        // Load comments on page load
-        window.onload = function() {
-            loadComments();
-        };
-    </script>
 </body>
 </html>
