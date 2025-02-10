@@ -89,7 +89,6 @@
                     commentElement.classList.add("comment");
                     commentElement.innerHTML = `
                         <strong>${comment.name}</strong>: ${comment.message} 
-                        <button class='delete-btn' onclick='deleteComment("${childSnapshot.key}")'>X</button>`;
                     commentsDiv.appendChild(commentElement);
                 });
             });
@@ -116,10 +115,6 @@
                 });
         }
 
-        // Function to delete a comment
-        function deleteComment(key) {
-            db.child(key).remove();
-        }
 
         // Load comments on page load
         window.onload = function() {
