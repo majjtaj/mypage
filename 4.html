@@ -124,8 +124,29 @@
             background-color: #a03240;
             color: white;
         }
+
+                .back-to-home {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-to-home a {
+            text-decoration: none;
+            color: #C04050;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        .back-to-home a:hover {
+            background-color: #a03240;
+            color: white;
+        }
     </style>
 </head>
+<body id="top">    
 <body>
 
     <div class="sidebar">
@@ -184,6 +205,9 @@
 loadTextFile(); // Call the function to load the text file
 
     </script>
-
+<div class="back-to-home">
+    <a href="#top">Back to Home</a>
+</div>
+    
 </body>
 </html>
