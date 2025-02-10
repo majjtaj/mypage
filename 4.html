@@ -147,7 +147,23 @@
         <div id="Særligtnæringsrigefødevarer">
             <div class="colored-banner">Særligt næringsrige fødevarer</div>
             <p>Der er selvfølgelig gode ting i mange ting. Men så er der nogle ting som har mange gode ting. Her er en lettere tilfældig, men altså ikke rigtig tilfældig liste over nogle fødevarer jeg prøver at få med i min kurv lidt oftere end andet. Det er for guds skyld ikke fordi man ikke skal spise andet. Men måske kan man spise lidt mere af dette.</p>
-            
+        <script>
+        function loadTextFile() {
+            const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
+
+            fetch(filePath)
+                .then(response => response.text())
+                .then(text => {
+                    // Insert the text into the specific div
+                    document.getElementById('my-text-container').textContent = text;
+                })
+                .catch(error => {
+                    console.error('Error loading file:', error);
+                });
+        }
+
+        loadTextFile(); // Call the function to load the text file
+    </script>    
         </div>
 
         <div id="AntioxidanterAAAAMEN">
