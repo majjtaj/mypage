@@ -88,11 +88,12 @@
                     let commentElement = document.createElement("div");
                     commentElement.classList.add("comment");
                     commentElement.innerHTML = `
-                        <strong>${comment.name}</strong>: ${comment.message} 
-                    commentsDiv.appendChild(commentElement);
+                        <strong>${comment.name}</strong>: ${comment.message}`;
+                    commentsDiv.appendChild(commentElement); // Move this inside the loop
                 });
             });
         }
+
 
         // Function to submit a new comment
         function submitComment() {
