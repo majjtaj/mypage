@@ -6,14 +6,22 @@
     <title>gæstebogen</title>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;700&display=swap" rel="stylesheet">
+
 
     <style>
         body {
-            background-color: #C04050;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Chakra Petch', sans-serif;
         }
+        h1 {
+            font-weight: 700; /* Bold for the title */
+        }
+
+        p, .comment {
+            font-weight: 400; /* Normal weight for the text */
+        }
+
+    
         .comment-box {
             margin: 20px auto;
             max-width: 500px;
@@ -45,14 +53,7 @@
             max-width: 500px;
             text-align: left;
         }
-        .delete-btn {
-            background: red;
-            color: white;
-            padding: 5px;
-            border: none;
-            cursor: pointer;
-            float: right;
-        }
+        
     </style>
 </head>
 <body>
