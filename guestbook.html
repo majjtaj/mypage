@@ -57,7 +57,18 @@
             max-width: 500px;
             text-align: left;
         }
-        
+
+        /* Style for the back to home button */
+        .home-button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #005400;
+            color: #C04050;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +79,9 @@
         <button onclick="submitComment()">Submit</button>
     </div>
     <div class="comments" id="comments"></div>
+
+    <!-- Back to Home button -->
+    <button class="home-button" onclick="goHome()">Back to Home</button>
 
     <script>
         // Firebase configuration
@@ -99,7 +113,6 @@
             });
         }
 
-
         // Function to submit a new comment
         function submitComment() {
             let name = document.getElementById("name").value.trim();
@@ -121,6 +134,10 @@
                 });
         }
 
+        // Function to go back to home
+        function goHome() {
+            window.location.href = "/";  // This can be changed to your homepage URL if different
+        }
 
         // Load comments on page load
         window.onload = function() {
