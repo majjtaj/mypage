@@ -168,20 +168,21 @@
 
     <script>
         function loadTextFile() {
-            const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
+    const filePath = 'https://raw.githubusercontent.com/majjtaj/mypage/refs/heads/main/SNF.txt'; // Raw GitHub URL to the .txt file
 
-            fetch(filePath)
-                .then(response => response.text())
-                .then(text => {
-                    // Insert the text into the specific div
-                    document.getElementById('my-text-container').textContent = text;
-                })
-                .catch(error => {
-                    console.error('Error loading file:', error);
-                });
-        }
+    fetch(filePath)
+        .then(response => response.text())
+        .then(text => {
+            // Use innerHTML instead of textContent to render HTML tags
+            document.getElementById('my-text-container').innerHTML = text;
+        })
+        .catch(error => {
+            console.error('Error loading file:', error);
+        });
+}
 
-        loadTextFile(); // Call the function to load the text file
+loadTextFile(); // Call the function to load the text file
+
     </script>
 
 </body>
