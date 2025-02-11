@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lille Leo, Lille Leo, Lille Leo</title>
+    
+    <!-- Google Font (Playful Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Playful Green Background with Dog Bones */
+        body {
+            background-color: #A3D977; /* Soft green */
+            background-image: url('https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog-bone-pattern.png'); 
+            background-repeat: repeat;
+            font-family: 'Fredoka', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #3A5A40; /* Dark green */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #4D6839;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .photo {
+            width: 30%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Tilted Effect */
+        .photo:nth-child(3n+1) { transform: rotate(-5deg); } /* 1st in row tilts left */
+        .photo:nth-child(3n+2) { transform: rotate(5deg); }  /* 2nd in row tilts right */
+        .photo:nth-child(3n+3) { transform: rotate(-5deg); } /* 3rd in row tilts left */
+
+        .photo:hover {
+            transform: scale(1.05) rotate(0deg); /* Straightens & enlarges on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🐶 My Adorable Dog Gallery 🐾</h1>
+
+    <p>Welcome to my dog photo page! Here are some of my favorite pictures of my furry friend. 🐕💕</p>
+
+    <!-- Photo Grid -->
+    <div class="photo-grid">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog1.jpg" alt="Dog 1" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog2.jpg" alt="Dog 2" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog3.jpg" alt="Dog 3" class="photo">
+
+        <p>This was from our trip to the park! 🌳🐕</p>
+
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog4.jpg" alt="Dog 4" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog5.jpg" alt="Dog 5" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog6.jpg" alt="Dog 6" class="photo">
+
+        <p>After a long day of playing, he loves to nap. 😴🐾</p>
+
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog7.jpg" alt="Dog 7" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog8.jpg" alt="Dog 8" class="photo">
+        <img src="https://res.cloudinary.com/YOUR_ACCOUNT/image/upload/v1700000000/dog9.jpg" alt="Dog 9" class="photo">
+    </div>
+
+</body>
+</html>
