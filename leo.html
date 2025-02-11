@@ -18,6 +18,7 @@
             font-family: 'Fredoka', sans-serif;
             text-align: center;
             padding: 20px;
+            position: relative; /* Allow positioning of the button */
         }
 
         h1 {
@@ -63,11 +64,32 @@
         .photo:hover {
             transform: scale(1.05) rotate(0deg); /* Straightens & enlarges on hover */
         }
+
+        /* Back to Main Button */
+        .back-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px; /* Button size */
+            height: 50px;
+            background-image: url('tilbage.jpg'); /* Replace with the image URL from GitHub */
+            background-size: cover;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
 
     <h1>🐾Lille Leo, Lille Leo, Lille Leo🐾</h1>
+
+    <!-- Back to Main Button -->
+    <button class="back-btn" onclick="window.location.href='index.html'"></button>
 
     <!-- Photo Grid -->
     <div class="photo-grid">
@@ -110,7 +132,5 @@
         <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739283801/g_eiusn1.jpg" class="photo" alt="Dog 9">
     </div>
 
-
 </body>
 </html>
-
