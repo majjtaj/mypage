@@ -175,18 +175,13 @@
     <div class="gallery">
         <div class="gallery-text">
             <h2>Gallery 3 Title</h2>
-            <p>Some introductory text for this second gallery.</p>
+            <p>Japan analogt</p>
         </div>
 
-        <!-- Normal Image -->
-        <div class="image-container">
-            <img src="me1.png" class="active" alt="Slide 1">
-            <p id="desc-3">Description for image 1 in Gallery 3</p>
-        </div>
 
         <!-- Slideshow -->
         <div class="image-container slideshow">
-            <button class="arrow prev" onclick="prevSlide(1)">&#10094;</button>
+            <button class="arrow prev" onclick="prevSlide(2)">&#10094;</button>
             <img src="ronda1.jpg" class="active" alt="Slide 1">
             <img src="ronda.jpg" alt="Slide 2">
             <img src="me5.jpg" alt="Slide 3">
@@ -199,9 +194,9 @@
             <img src="protest.jpg" alt="Slide 10">
             <img src="kirke.jpg" alt="Slide 11">
             <img src="me1.png" alt="Slide 12">
-            <button class="arrow next" onclick="nextSlide(1)">&#10095;</button>
+            <button class="arrow next" onclick="nextSlide(2)">&#10095;</button>
         </div>
-        <p id="desc-4">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024.</p>
+        <p id="desc-5">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024.</p>
     </div>
 
 
@@ -263,8 +258,10 @@
             // Update description based on the active slide
             if (index === 0) {
                 document.getElementById('desc-2').textContent = descriptions1[nextIndex];
-            } else {
+            } else if (index === 1) {
                 document.getElementById('desc-4').textContent = descriptions2[nextIndex];
+            } else {
+                document.getElementById('desc-5').textContent = descriptions3[nextIndex];
             }
         }
 
@@ -278,8 +275,10 @@
             // Update description based on the active slide
             if (index === 0) {
                 document.getElementById('desc-2').textContent = descriptions1[prevIndex];
-            } else {
+            } else if (index === 1) {
                 document.getElementById('desc-4').textContent = descriptions2[prevIndex];
+            } else {
+                document.getElementById('desc-5').textContent = descriptions3[prevIndex];
             }
         }
     </script>
