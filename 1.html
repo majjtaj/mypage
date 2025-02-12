@@ -24,7 +24,7 @@
 
         .gallery-text {
             font-size: 1.2rem;
-            margin-bottom: 10px; /* Less space between text and image */
+            margin-bottom: 10px;
         }
 
         .image-container {
@@ -32,11 +32,11 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 8px; /* Consistent spacing between images and text */
+            gap: 8px;
         }
 
         .image-container p {
-            margin: 0; /* Remove unnecessary margins */
+            margin: 0;
             font-size: 1rem;
         }
 
@@ -52,7 +52,7 @@
         .slideshow {
             position: relative;
             width: 100%;
-            max-width: 598px; /* Ensures buttons align properly */
+            max-width: 598px;
         }
 
         .slideshow img {
@@ -78,11 +78,11 @@
         }
 
         .prev {
-            left: 10px; /* Consistent distance from image */
+            left: -30px;
         }
 
         .next {
-            right: 10px; /* Consistent distance from image */
+            right: -30px;
         }
 
         a {
@@ -140,7 +140,7 @@
         <!-- Normal Image -->
         <div class="image-container">
             <img src="me1.png" class="active" alt="Slide 1">
-            <p id="desc-3">Description for image 1</p>
+            <p id="desc-3">Description for image 1 in Gallery 2</p>
         </div>
 
         <!-- Slideshow -->
@@ -203,7 +203,12 @@
             let nextIndex = (activeIndex + 1) % slides.length;
             slides[nextIndex].classList.add('active');
 
-            document.getElementById(`desc-${index + 2}`).textContent = index === 0 ? descriptions1[nextIndex] : descriptions2[nextIndex];
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[nextIndex];
+            } else {
+                document.getElementById('desc-4').textContent = descriptions2[nextIndex];
+            }
         }
 
         function prevSlide(index) {
@@ -213,7 +218,12 @@
             let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
             slides[prevIndex].classList.add('active');
 
-            document.getElementById(`desc-${index + 2}`).textContent = index === 0 ? descriptions1[prevIndex] : descriptions2[prevIndex];
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[prevIndex];
+            } else {
+                document.getElementById('desc-4').textContent = descriptions2[prevIndex];
+            }
         }
     </script>
 </body>
