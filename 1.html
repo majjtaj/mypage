@@ -26,6 +26,20 @@
             margin-top: 5px;  /* Reduce space above the text */
             margin-bottom: 0; /* Remove unnecessary space below */
             font-size: 1rem;  /* Adjust text size if needed */
+        .image-container {
+            display: flex;
+            flex-direction: column; /* Stack image and text */
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+            text-align: center; /* Ensures text stays centered */
+        }
+
+        .image-container p {
+            margin-top: 10px; /* Ensure it's close to the image but not too close */
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
         }
         img {
             width: 100%; /* Allow image to take full width of the container */
@@ -42,6 +56,7 @@
         }
         .slideshow img {
             display: none;
+            margin: auto;
         }
         .slideshow img.active {
             display: block;
