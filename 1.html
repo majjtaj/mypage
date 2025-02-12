@@ -18,21 +18,20 @@
             max-width: 800px;
             margin: auto;
         }
+        .gallery-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
         .image-container {
             margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-        .image-container img {
-            max-width: 603px;
-            max-height: 897px;
-            width: auto;
+        img {
+            width: 100%;
             height: auto;
+            max-width: 897px;  /* You can switch between 897x603 and 603x897 */
+            max-height: 603px; /* This will set the height to 603px for standing images */
             border-radius: 8px;
-            background-color: white;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border: 5px solid white; /* Adds white border around images */
         }
         .slideshow {
             position: relative;
@@ -55,76 +54,138 @@
         }
         .prev { left: 10px; }
         .next { right: 10px; }
-        .caption {
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            color: black;
-            padding: 5px 10px;
-            border-radius: 5px;
-            max-width: 80%;
-        }
     </style>
 </head>
 <body>
     <h1>Gallery</h1>
-    
+
+    <!-- First Gallery -->
     <div class="gallery">
+        <div class="gallery-text">
+            <h2>Gallery 1 Title</h2>
+            <p>Some introductory text for this first gallery. This text stays the same and describes the gallery.</p>
+        </div>
+
         <!-- Normal Image -->
         <div class="image-container">
             <img src="me1.png" class="active" alt="Slide 1">
-            <p class="caption">Description for image 1</p>
+            <p id="desc-1">Description for image 1</p> <!-- Initial text below image -->
         </div>
-        
+
         <!-- Slideshow -->
         <div class="image-container slideshow">
-            <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
-            <img src="ronda1.jpg" class="active" alt="Fran og jeg i Spanien">
-            <img src="ronda.jpg" alt="Ronda by">
-            <img src="me5.jpg" alt="Mig ved kysten">
-            <img src="me3.jpg" alt="Udsigt fra bjerget">
-            <button class="arrow next" onclick="nextSlide()">&#10095;</button>
-            <p class="caption">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024...</p>
+            <button class="arrow prev" onclick="prevSlide(0)">&#10094;</button>
+            <img src="ronda1.jpg" class="active" alt="Slide 1">
+            <img src="ronda.jpg" alt="Slide 2">
+            <img src="me5.jpg" alt="Slide 3">
+            <img src="me3.jpg" alt="Slide 4">
+            <img src="fran2.jpg" alt="Slide 5">
+            <img src="bybjerg1.jpg" alt="Slide 6">
+            <img src="huseklipper1.jpg" alt="Slide 7">
+            <img src="me2.jpg" alt="Slide 8">
+            <img src="fran1.jpg" alt="Slide 9">
+            <img src="protest.jpg" alt="Slide 10">
+            <img src="kirke.jpg" alt="Slide 11">
+            <img src="me1.png" alt="Slide 12">
+            <button class="arrow next" onclick="nextSlide(0)">&#10095;</button>
         </div>
-
-        <p class="caption">noget her</p>
-
-        <div class="image-container slideshow">
-            <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
-            <img src="ronda1.jpg" class="active" alt="Fran og jeg i Spanien">
-            <img src="ronda.jpg" alt="Ronda by">
-            <img src="me5.jpg" alt="Mig ved kysten">
-            <img src="me3.jpg" alt="Udsigt fra bjerget">
-            <button class="arrow next" onclick="nextSlide()">&#10095;</button>
-            <p class="caption">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024...</p>
-        </div>
+        <p id="desc-2">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024. En kombination der ikke var hånd i handske...</p> <!-- Static text below the slideshow -->
     </div>
-    
+
+    <!-- Second Gallery (duplicate of the first) -->
+    <div class="gallery">
+        <div class="gallery-text">
+            <h2>Gallery 2 Title</h2>
+            <p>Some introductory text for this second gallery. This text stays the same and describes the gallery.</p>
+        </div>
+
+        <!-- Normal Image -->
+        <div class="image-container">
+            <img src="me1.png" class="active" alt="Slide 1">
+            <p id="desc-3">Description for image 1</p> <!-- Initial text below image -->
+        </div>
+
+        <!-- Slideshow -->
+        <div class="image-container slideshow">
+            <button class="arrow prev" onclick="prevSlide(1)">&#10094;</button>
+            <img src="ronda1.jpg" class="active" alt="Slide 1">
+            <img src="ronda.jpg" alt="Slide 2">
+            <img src="me5.jpg" alt="Slide 3">
+            <img src="me3.jpg" alt="Slide 4">
+            <img src="fran2.jpg" alt="Slide 5">
+            <img src="bybjerg1.jpg" alt="Slide 6">
+            <img src="huseklipper1.jpg" alt="Slide 7">
+            <img src="me2.jpg" alt="Slide 8">
+            <img src="fran1.jpg" alt="Slide 9">
+            <img src="protest.jpg" alt="Slide 10">
+            <img src="kirke.jpg" alt="Slide 11">
+            <img src="me1.png" alt="Slide 12">
+            <button class="arrow next" onclick="nextSlide(1)">&#10095;</button>
+        </div>
+        <p id="desc-4">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024. En kombination der ikke var hånd i handske...</p> <!-- Static text below the slideshow -->
+    </div>
+
     <a href="index.html">⬅ Back to Home</a>
 
     <script>
-        let currentSlide = 0;
-        let slides = document.querySelectorAll('.slideshow img');
-        let captions = [
-            "Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024...",
-            "Ronda by - smuk bro og bjerge",
-            "Mig ved kysten - solnedgang",
-            "Udsigt fra bjerget - en flot dag"
+        const descriptions1 = [
+            "Description for image 1",
+            "Description for image 2",
+            "Description for image 3",
+            "Description for image 4",
+            "Description for image 5",
+            "Description for image 6",
+            "Description for image 7",
+            "Description for image 8",
+            "Description for image 9",
+            "Description for image 10",
+            "Description for image 11",
+            "Description for image 12"
         ];
-        let captionElement = document.querySelector('.slideshow .caption');
 
-        function showSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (index + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            captionElement.textContent = captions[currentSlide];
+        const descriptions2 = [
+            "Description for image 1 in Gallery 2",
+            "Description for image 2 in Gallery 2",
+            "Description for image 3 in Gallery 2",
+            "Description for image 4 in Gallery 2",
+            "Description for image 5 in Gallery 2",
+            "Description for image 6 in Gallery 2",
+            "Description for image 7 in Gallery 2",
+            "Description for image 8 in Gallery 2",
+            "Description for image 9 in Gallery 2",
+            "Description for image 10 in Gallery 2",
+            "Description for image 11 in Gallery 2",
+            "Description for image 12 in Gallery 2"
+        ];
+
+        function nextSlide(index) {
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            let nextIndex = (activeIndex + 1) % slides.length;
+            slides[nextIndex].classList.add('active');
+
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[nextIndex];
+            } else {
+                document.getElementById('desc-4').textContent = descriptions2[nextIndex];
+            }
         }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+        function prevSlide(index) {
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
+            slides[prevIndex].classList.add('active');
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[prevIndex];
+            } else {
+                document.getElementById('desc-4').textContent = descriptions2[prevIndex];
+            }
         }
     </script>
 </body>
