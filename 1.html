@@ -30,8 +30,8 @@
         img {
             width: 100%; /* Allow image to take full width of the container */
             height: auto; /* Maintain the aspect ratio */
-            max-width: 598px;  /* Set max width to 897px */
-            max-height: 402px; /* Set max height to 603px */
+            max-width: 658px;  /* Set max width to 897px */
+            max-height: 442px; /* Set max height to 603px */
             object-fit: contain; /* Ensures the image stays proportional */
             border-radius: 8px;
             border: 5px solid white; /* Adds white border around images */
@@ -40,9 +40,8 @@
         .slideshow {
             position: relative;
         }
-        .slideshow + p {
-            margin-top: 5px;  /* Moves text closer to the slideshow */
-            margin-bottom: 0;
+        .slideshow img {
+            display: none;
         }
         .slideshow img.active {
             display: block;
@@ -68,7 +67,7 @@
     <div class="gallery">
         <div class="gallery-text">
             <h2>Gallery 1 Title</h2>
-            <p>tekst herr</p>
+            <p>tekst herrrr</p>
         </div>
 
         <!-- Normal Image -->
@@ -195,4 +194,3 @@
     </script>
 </body>
 </html>
-
