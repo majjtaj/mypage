@@ -55,6 +55,7 @@
             text-align: center;
             gap: 8px;
         }
+        }
 
         .image-container p {
             margin: 0;
@@ -246,7 +247,7 @@
             <img src="me1.png" alt="Slide 12">
             <button class="arrow next" onclick="nextSlide(1)">&#10095;</button>
         </div>
-        <p id="desc-4">Fran og jeg på tur i Japan: Tokyo, Kyoto, Osaka, Hiroshima, og Nara.</p>
+        <p id="desc-4">Fran og jeg på ferie i Alicante + Malaga, Spanien i slut Oktober 2024.</p>
     </div>
 
         <!-- Third Gallery -->
@@ -297,30 +298,6 @@
         ];
 
         const descriptions2 = [
-            "En flot udsigt",
-            "En flot udsigt",
-            "En flot udsigt",
-            "En flot udsigt",
-            "En flot udsigt",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Lidt billeder fra gaderne og rundt omkring"
-            "Lidt billeder fra gaderne og rundt omkring",
-            "Standard frokost portion. Man kan ane mig i baggrunden der desværre kun kunne få stegte ris i mangel på vegetarisk udvalg. En ikke helt let opgave med et par spisepinde!",
-            "Vi nyder en lille snack på et bjerg",
-            ".. rigtig meget",
-            "Et tempel",
-            "En ged",
-            "Et andet tempel",
-            "Inde på en bar",
-            "Vi får Okonomiyaki. Rigtig lækkert, også selvom jeg blev lidt hidsig fordi fran fik lov at pynte pandekagerne istedet for damen og jeg synes jo ikke det blev gjort helt godt nok ",
-            "Turister",
-            "En kat der gjorde indtryk på os",
-            "Description for image 12 in Gallery 2"
             "Description for image 1 in Gallery 2",
             "Description for image 2 in Gallery 2",
             "Description for image 3 in Gallery 2",
@@ -351,47 +328,38 @@
         ];
 
         function nextSlide(index) {
-            let slideshows = document.querySelectorAll('.slideshow');
-            if (index >= slideshows.length) return; // Prevent errors if index is out of range
-        
-            let slides = slideshows[index].querySelectorAll('img');
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
             let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
-            
-            if (activeIndex === -1) activeIndex = 0; // Fallback in case no active image exists
-        
             slides[activeIndex].classList.remove('active');
             let nextIndex = (activeIndex + 1) % slides.length;
             slides[nextIndex].classList.add('active');
-        
-            updateDescription(index, nextIndex);
-        }
 
-        function prevSlide(index) {
-            let slideshows = document.querySelectorAll('.slideshow');
-            if (index >= slideshows.length) return;
-        
-            let slides = slideshows[index].querySelectorAll('img');
-            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
-            
-            if (activeIndex === -1) activeIndex = 0;
-        
-            slides[activeIndex].classList.remove('active');
-            let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
-            slides[prevIndex].classList.add('active');
-        
-            updateDescription(index, prevIndex);
-        }
-
-        function updateDescription(index, slideIndex) {
-            let descriptions = [descriptions1, descriptions2, descriptions3];
-            let descIds = ['desc-2', 'desc-4', 'desc-5'];
-        
-            if (descriptions[index] && document.getElementById(descIds[index])) {
-                document.getElementById(descIds[index]).textContent = descriptions[index][slideIndex];
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[nextIndex];
+            } else if (index === 1) {
+                document.getElementById('desc-4').textContent = descriptions2[nextIndex];
+            } else {
+                document.getElementById('desc-5').textContent = descriptions3[nextIndex];
             }
         }
 
+        function prevSlide(index) {
+            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            slides[activeIndex].classList.remove('active');
+            let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
+            slides[prevIndex].classList.add('active');
+
+            // Update description based on the active slide
+            if (index === 0) {
+                document.getElementById('desc-2').textContent = descriptions1[prevIndex];
+            } else if (index === 1) {
+                document.getElementById('desc-4').textContent = descriptions2[prevIndex];
+            } else {
+                document.getElementById('desc-5').textContent = descriptions3[prevIndex];
+            }
+        }
     </script>
 </body>
 </html>
-
