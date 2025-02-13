@@ -351,38 +351,46 @@
         ];
 
         function nextSlide(index) {
-            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let slideshows = document.querySelectorAll('.slideshow');
+            if (index >= slideshows.length) return; // Prevent errors if index is out of range
+        
+            let slides = slideshows[index].querySelectorAll('img');
             let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            
+            if (activeIndex === -1) activeIndex = 0; // Fallback in case no active image exists
+        
             slides[activeIndex].classList.remove('active');
             let nextIndex = (activeIndex + 1) % slides.length;
             slides[nextIndex].classList.add('active');
-
-            // Update description based on the active slide
-            if (index === 0) {
-                document.getElementById('desc-2').textContent = descriptions1[nextIndex];
-            } else if (index === 1) {
-                document.getElementById('desc-4').textContent = descriptions2[nextIndex];
-            } else {
-                document.getElementById('desc-5').textContent = descriptions3[nextIndex];
-            }
+        
+            updateDescription(index, nextIndex);
         }
 
         function prevSlide(index) {
-            let slides = document.querySelectorAll('.slideshow')[index].querySelectorAll('img');
+            let slideshows = document.querySelectorAll('.slideshow');
+            if (index >= slideshows.length) return;
+        
+            let slides = slideshows[index].querySelectorAll('img');
             let activeIndex = Array.from(slides).findIndex(img => img.classList.contains('active'));
+            
+            if (activeIndex === -1) activeIndex = 0;
+        
             slides[activeIndex].classList.remove('active');
             let prevIndex = (activeIndex - 1 + slides.length) % slides.length;
             slides[prevIndex].classList.add('active');
+        
+            updateDescription(index, prevIndex);
+        }
 
-            // Update description based on the active slide
-            if (index === 0) {
-                document.getElementById('desc-2').textContent = descriptions1[prevIndex];
-            } else if (index === 1) {
-                document.getElementById('desc-4').textContent = descriptions2[prevIndex];
-            } else {
-                document.getElementById('desc-5').textContent = descriptions3[prevIndex];
+        function updateDescription(index, slideIndex) {
+            let descriptions = [descriptions1, descriptions2, descriptions3];
+            let descIds = ['desc-2', 'desc-4', 'desc-5'];
+        
+            if (descriptions[index] && document.getElementById(descIds[index])) {
+                document.getElementById(descIds[index]).textContent = descriptions[index][slideIndex];
             }
         }
+
     </script>
 </body>
 </html>
