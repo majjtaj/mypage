@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lille Leo, Lille Leo, Lille Leo</title>
+    
+    <!-- Google Font (Playful Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Playful Green Background with Dog Bones */
+        body {
+            background-color: rgba(163, 217, 119, 0.8); /* Green with 80% opacity */
+            background-image: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg'); 
+            background-repeat: repeat;
+            background-size: 150px;
+            font-family: 'Fredoka', sans-serif;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Allow positioning of the button */
+        }
+
+        h1 {
+            color: #3A5A40; /* Dark green */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #4D6839;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+
+
+        /* Back to Main Button */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 150px; /* Button size */
+            height: 150px;
+            background-image: url('tilbage.jpg'); /* Replace with the image URL from GitHub */
+            background-size: cover;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Opskriftsbogen</h1>
+
+    <!-- Back to Main Button -->
+    <button class="back-btn" onclick="window.location.href='index.html'"></button>
+
+
+
+
+
+
+</body>
+</html>
