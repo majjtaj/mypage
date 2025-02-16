@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-    
-    <!-- Inline CSS -->
+    <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
             font-family: 'Sue Ellen Francisco', cursive;
@@ -83,11 +83,57 @@
             flex-direction: column;
             gap: 10px;
         }
-    </style>
+    </style>       
 </head>
 <body>
 
-    <!-- Page content goes here (same as before) -->
-    
+    <header>
+        <h1>Title Goes Here</h1>
+        <p>Subtitle or description below the title</p>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li>Category 1
+                    <ul>
+                        <li>Subcategory 1</li>
+                        <li>Subcategory 2</li>
+                    </ul>
+                </li>
+                <li>Category 2
+                    <ul>
+                        <li>Subcategory 3</li>
+                        <li>Subcategory 4</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="content">
+                <div class="row">
+                    <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
+                    <div class="placeholder">
+                        <p>Text referring to sidebar</p>
+                        <div class="blank-frame"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="placeholder">
+                        <p>Text referring to sidebar</p>
+                        <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
+                    </div>
+                    <div class="double-frame">
+                        <div class="small-frame"></div>
+                        <div class="small-frame"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>
+
