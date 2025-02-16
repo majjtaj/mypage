@@ -1,168 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
+    <title>Velkommen til Maja's opskriftsbog</title>
     <style>
         body {
-            font-family: 'Sue Ellen Francisco', cursive;
             background: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg') repeat;
+            font-family: 'Sue Ellen Francisco', cursive;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background: rgba(255, 255, 255, 0.8);
+        h1 {
             text-align: center;
-            padding: 20px;
-            width: 100%;
+            font-size: 3rem;
+            margin-top: 20px;
         }
 
-        .container {
+        .intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .recipe {
             display: flex;
-            margin-top: 20px; /* Push the content below the header */
+            justify-content: space-between;
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
         }
 
-        .sidebar {
-            width: 250px;
-            position: fixed;
-            top: 100px; /* Start below the header */
-            left: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            box-sizing: border-box;
+        .recipe img {
+            max-width: 200px;
         }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
+        .recipe .recipe-content {
+            max-width: 600px;
+            text-align: left;
+            padding-left: 20px;
         }
 
-        .sidebar ul li {
-            margin: 10px 0;
-        }
-
-        main {
-            margin-left: 270px;
-            padding: 20px;
-            flex: 1;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Adjusting for horizontal layout */
-        .row {
-            display: flex;
-            align-items: flex-start; /* Align top of elements */
-            margin-bottom: 20px;
-        }
-
-        /* Ensuring images and frames align horizontally */
-        .image-container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
-            gap: 20px;
-        }
-
-        img {
-            width: 300px;
-            height: auto;
-        }
-
-        .placeholder {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .blank-frame, .small-frame {
-            background: rgba(200, 200, 200, 0.5);
-            border: 2px dashed #333;
-            width: 200px;
-            height: 150px;
-        }
-
-        .double-frame {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Added styles for text above the images */
-        .image-text {
-            font-size: 18px;
+        .recipe .recipe-title {
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #333;
-            text-decoration: underline;
+        }
+
+        .double-image img {
+            max-width: 150px;
             margin-bottom: 10px;
-            text-align: center; /* Center text */
+        }
+
+        .double-image {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-container {
+            margin-bottom: 40px;
         }
     </style>
 </head>
 <body>
+    <h1>Velkommen til Maja's opskriftsbog</h1>
+    <p class="intro">Velkommen til min opskriftsbog, hvor du kan finde alle de lækre opskrifter, jeg elsker at lave. Her deler jeg både mine yndlingsretter og nye, spændende ideer. Kom og få inspiration!</p>
 
-    <header>
-        <h1>Title Goes Here</h1>
-        <p>Subtitle or description below the title</p>
-    </header>
+    <div class="recipe-container">
+        <div class="recipe">
+            <div class="recipe-content">
+                <div class="recipe-title">Opskrift på muffins</div>
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
+            </div>
+            <div class="recipe-images">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+            </div>
+        </div>
 
-    <div class="container">
-        <nav class="sidebar">
-            <ul>
-                <li><a href="#category1">Category 1</a>
-                    <ul>
-                        <li><a href="#subcategory1">Subcategory 1</a></li>
-                        <li><a href="#subcategory2">Subcategory 2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#category2">Category 2</a>
-                    <ul>
-                        <li><a href="#subcategory3">Subcategory 3</a></li>
-                        <li><a href="#subcategory4">Subcategory 4</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="recipe">
+            <div class="recipe-content">
+                <div class="recipe-title">Opskrift på muffins</div>
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
+            </div>
+            <div class="double-image">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+            </div>
+        </div>
 
-        <main>
-            <section class="content">
-                <div class="row">
-                    <div class="image-text"><a href="#category1">Link to Category 1</a></div>
-                    <div class="image-container">
-                        <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
-                        <div class="placeholder">
-                            <div class="blank-frame"></div>
-                            <p>Text referring to sidebar</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="recipe">
+            <div class="recipe-content">
+                <div class="recipe-title">Opskrift på muffins</div>
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
+            </div>
+            <div class="recipe-images">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+            </div>
+        </div>
 
-                <div class="row">
-                    <div class="image-text"><a href="#category2">Link to Category 2</a></div>
-                    <div class="image-container">
-                        <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
-                        <div class="placeholder">
-                            <div class="blank-frame"></div>
-                            <p>Text referring to sidebar</p>
-                        </div>
-                        <div class="double-frame">
-                            <div class="small-frame"></div>
-                            <div class="small-frame"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div class="recipe">
+            <div class="recipe-content">
+                <div class="recipe-title">Opskrift på muffins</div>
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
+            </div>
+            <div class="double-image">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+            </div>
+        </div>
+
+        <div class="recipe">
+            <div class="recipe-content">
+                <div class="recipe-title">Opskrift på muffins</div>
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
+            </div>
+            <div class="recipe-images">
+                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
