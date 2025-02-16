@@ -24,13 +24,13 @@
 
         .container {
             display: flex;
-            margin-top: 20px; /* To push the content down below the header */
+            margin-top: 20px; /* Push the content below the header */
         }
 
         .sidebar {
             width: 250px;
             position: fixed;
-            top: 80px; /* Start below the header */
+            top: 100px; /* Start below the header (adjusted) */
             left: 0;
             bottom: 0;
             background: rgba(255, 255, 255, 0.9);
@@ -60,6 +60,7 @@
 
         .row {
             display: flex;
+            flex-direction: column; /* Stack elements vertically */
             align-items: center;
             margin-bottom: 20px;
         }
@@ -93,6 +94,7 @@
             color: #333;
             text-decoration: underline;
             margin-bottom: 10px;
+            text-align: center; /* Center text */
         }
     </style>
 </head>
@@ -149,3 +151,4 @@
 
 </body>
 </html>
+
