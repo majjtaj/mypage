@@ -27,7 +27,7 @@
         .recipe {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 40px 0; /* Increased spacing between recipe sections */
             padding: 0;
             box-shadow: none;
         }
@@ -58,12 +58,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Center images vertically */
         }
 
         /* Center the image vertically on the right side */
         .recipe .recipe-images {
             display: flex;
-            align-items: center; /* Vertically centers the images */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Vertically centers the images */
         }
 
         .recipe-container {
