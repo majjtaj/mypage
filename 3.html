@@ -24,16 +24,18 @@
 
         .container {
             display: flex;
+            margin-top: 20px; /* To push the content down below the header */
         }
 
         .sidebar {
             width: 250px;
             position: fixed;
-            top: 0;
+            top: 80px; /* Start below the header */
             left: 0;
             bottom: 0;
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
+            box-sizing: border-box;
         }
 
         .sidebar ul {
@@ -83,7 +85,16 @@
             flex-direction: column;
             gap: 10px;
         }
-    </style>       
+
+        /* Added styles for text above the images */
+        .image-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -95,16 +106,16 @@
     <div class="container">
         <nav class="sidebar">
             <ul>
-                <li>Category 1
+                <li><a href="#category1">Category 1</a>
                     <ul>
-                        <li>Subcategory 1</li>
-                        <li>Subcategory 2</li>
+                        <li><a href="#subcategory1">Subcategory 1</a></li>
+                        <li><a href="#subcategory2">Subcategory 2</a></li>
                     </ul>
                 </li>
-                <li>Category 2
+                <li><a href="#category2">Category 2</a>
                     <ul>
-                        <li>Subcategory 3</li>
-                        <li>Subcategory 4</li>
+                        <li><a href="#subcategory3">Subcategory 3</a></li>
+                        <li><a href="#subcategory4">Subcategory 4</a></li>
                     </ul>
                 </li>
             </ul>
@@ -113,6 +124,7 @@
         <main>
             <section class="content">
                 <div class="row">
+                    <div class="image-text"><a href="#category1">Link to Category 1</a></div>
                     <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
                     <div class="placeholder">
                         <p>Text referring to sidebar</p>
@@ -121,6 +133,7 @@
                 </div>
 
                 <div class="row">
+                    <div class="image-text"><a href="#category2">Link to Category 2</a></div>
                     <div class="placeholder">
                         <p>Text referring to sidebar</p>
                         <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
@@ -136,4 +149,3 @@
 
 </body>
 </html>
-
