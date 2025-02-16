@@ -1,122 +1,117 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opskrifter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>Recipe Collection</title>
     <style>
         body {
-            background: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Indie Flower', cursive;
+            background-image: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg');
+            background-repeat: repeat;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        header {
-            text-align: center;
-            font-size: 2em;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-        }
         .container {
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .content {
+            display: flex;
+            width: 80%;
+            margin-top: 10px;
         }
         .menu {
             width: 200px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
         }
         .menu ul {
-            list-style: none;
+            list-style-type: none;
             padding: 0;
         }
-        .menu ul li {
+        .menu li {
             margin: 10px 0;
         }
-        .menu ul li a {
+        .menu a {
             text-decoration: none;
             color: black;
-            font-size: 1.2em;
         }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            width: 80%;
-        }
-        .recipe {
+        .recipes {
+            flex-grow: 1;
             display: flex;
+            flex-direction: row;
             align-items: flex-start;
-            margin-bottom: 40px;
-        }
-        .recipe .notepaper {
-            background: url('/mnt/data/opskriftsskabelon.png') no-repeat center;
-            background-size: contain;
-            width: 300px;
-            height: 400px;
+            gap: 20px;
             padding: 20px;
         }
-        .recipe .images {
+        .notepaper {
+            width: 50%;
+            background-image: url('/mnt/data/opskriftsskabelon.png');
+            background-size: cover;
+            padding: 20px;
+            height: 500px;
+        }
+        .images {
+            width: 50%;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
-            margin-left: 20px;
         }
-        .recipe .images img {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
-        }
-        .back-home {
+        .back-button {
             position: absolute;
-            top: 80px;
+            top: 60px;
             right: 20px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 1.2em;
-            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Opskrifter</h1>
-    </header>
-    <a href="#" class="back-home">Tilbage til forsiden</a>
     <div class="container">
-        <nav class="menu">
-            <ul>
-                <li><a href="#recipe1">Opskrift 1</a></li>
-                <li><a href="#recipe2">Opskrift 2</a></li>
-                <li><a href="#recipe3">Opskrift 3</a></li>
-            </ul>
-        </nav>
+        <div class="header">
+            <h1>Recipe Collection</h1>
+            <p>A place to store all your favorite recipes</p>
+        </div>
+        <a href="index.html" class="back-button">Back to Home</a>
         <div class="content">
-            <div id="recipe1" class="recipe">
-                <div class="notepaper">Her skrives opskriften</div>
-                <div class="images">
-                    <img src="placeholder.jpg" alt="Billede 1">
-                    <img src="placeholder.jpg" alt="Billede 2">
+            <nav class="menu">
+                <ul>
+                    <li><a href="#A">A</a></li>
+                    <ul>
+                        <li><a href="#A.a">A.a</a></li>
+                        <li><a href="#A.b">A.b</a></li>
+                        <li><a href="#A.c">A.c</a></li>
+                    </ul>
+                    <li><a href="#B">B</a></li>
+                    <ul>
+                        <li><a href="#B.a">B.a</a></li>
+                        <li><a href="#B.b">B.b</a></li>
+                    </ul>
+                    <li><a href="#C">C</a></li>
+                </ul>
+            </nav>
+            <div class="recipes">
+                <div class="notepaper">
+                    <h2>Recipe Title</h2>
+                    <p>Ingredients and instructions go here.</p>
                 </div>
-            </div>
-            <div id="recipe2" class="recipe">
-                <div class="notepaper">Her skrives opskriften</div>
                 <div class="images">
-                    <img src="placeholder.jpg" alt="Billede 1">
-                </div>
-            </div>
-            <div id="recipe3" class="recipe">
-                <div class="notepaper">Her skrives opskriften</div>
-                <div class="images">
-                    <img src="placeholder.jpg" alt="Billede 1">
-                    <img src="placeholder.jpg" alt="Billede 2">
-                    <img src="placeholder.jpg" alt="Billede 3">
+                    <p>Insert images here.</p>
                 </div>
             </div>
         </div>
