@@ -58,12 +58,19 @@
             flex-direction: column;
         }
 
+        /* Adjusting for horizontal layout */
         .row {
             display: flex;
-            flex-direction: row; /* Align items horizontally */
-            justify-content: space-between; /* Ensure space between image and frames */
-            align-items: flex-start; /* Align top of images and frames */
+            align-items: flex-start; /* Align top of elements */
             margin-bottom: 20px;
+        }
+
+        /* Ensuring images and frames align horizontally */
+        .image-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
         }
 
         img {
@@ -72,7 +79,6 @@
         }
 
         .placeholder {
-            margin-left: 20px;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -131,23 +137,27 @@
             <section class="content">
                 <div class="row">
                     <div class="image-text"><a href="#category1">Link to Category 1</a></div>
-                    <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
-                    <div class="placeholder">
-                        <p>Text referring to sidebar</p>
-                        <div class="blank-frame"></div>
+                    <div class="image-container">
+                        <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
+                        <div class="placeholder">
+                            <div class="blank-frame"></div>
+                            <p>Text referring to sidebar</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="image-text"><a href="#category2">Link to Category 2</a></div>
-                    <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
-                    <div class="placeholder">
-                        <p>Text referring to sidebar</p>
-                        <div class="blank-frame"></div>
-                    </div>
-                    <div class="double-frame">
-                        <div class="small-frame"></div>
-                        <div class="small-frame"></div>
+                    <div class="image-container">
+                        <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Uploaded Image">
+                        <div class="placeholder">
+                            <div class="blank-frame"></div>
+                            <p>Text referring to sidebar</p>
+                        </div>
+                        <div class="double-frame">
+                            <div class="small-frame"></div>
+                            <div class="small-frame"></div>
+                        </div>
                     </div>
                 </div>
             </section>
