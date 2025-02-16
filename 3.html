@@ -1,84 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lille Leo, Lille Leo, Lille Leo</title>
-    
-    <!-- Google Font (Playful Style) -->
+    <title>Opskriftsamling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
-        /* Playful Green Background with Dog Bones */
         body {
-            background-color: rgba(163, 217, 119, 0.8); /* Green with 80% opacity */
-            background-image: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg'); 
-            background-repeat: repeat;
-            background-size: 150px;
+            background: url('/mnt/data/skabelon.png') repeat;
             font-family: 'Fredoka', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
             text-align: center;
+            font-family: 'Sue Ellen Francisco', cursive;
+            font-size: 2em;
             padding: 20px;
-            position: relative; /* Allow positioning of the button */
+            background: white;
+            position: relative;
         }
-
-        h1 {
-            color: #3A5A40; /* Dark green */
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        header small {
+            display: block;
+            font-size: 0.7em;
+            color: #888;
         }
-
-        p {
-            font-size: 1.2rem;
-            color: #4D6839;
-            max-width: 800px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.5);
-            padding: 10px;
+        .home-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .sidebar {
+            width: 250px;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin: 10px 0;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .recipe {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .recipe img.template {
+            width: 250px;
+        }
+        .recipe .images {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .recipe .images img {
+            width: 150px;
+            height: auto;
             border-radius: 10px;
         }
-
-        /* Photo Grid */
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-
-
-        /* Back to Main Button */
-        .back-btn {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            width: 150px; /* Button size */
-            height: 150px;
-            background-image: url('tilbage.jpg'); /* Replace with the image URL from GitHub */
-            background-size: cover;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .back-btn:hover {
-            transform: scale(1.1);
+        .back-home {
+            text-align: center;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-
-    <h1>Opskriftsbogen</h1>
-
-    <!-- Back to Main Button -->
-    <button class="back-btn" onclick="window.location.href='index.html'"></button>
-
-
-
-
-
-
+    <header>
+        <a href="#" class="home-button">Tilbage til forsiden</a>
+        <h1>Insert heading here</h1>
+        <small>text underneath here</small>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li>A</li>
+                <ul>
+                    <li>A.a</li>
+                    <li>A.b</li>
+                    <li>A.c</li>
+                </ul>
+                <li>B</li>
+                <ul>
+                    <li>B.a</li>
+                    <li>B.b</li>
+                </ul>
+                <li>C</li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <!-- Recipe Section (Repeatable) -->
+            <div class="recipe">
+                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+                <div class="images">
+                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                    <img src="https://via.placeholder.com/150" alt="Billede 2">
+                </div>
+            </div>
+            
+            <!-- Repeat this block for more recipes -->
+            <div class="recipe">
+                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+                <div class="images">
+                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+                <div class="images">
+                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                    <img src="https://via.placeholder.com/150" alt="Billede 2">
+                    <img src="https://via.placeholder.com/150" alt="Billede 3">
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+                <div class="images">
+                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                </div>
+            </div>
+            
+            <div class="recipe">
+                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+                <div class="images">
+                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                    <img src="https://via.placeholder.com/150" alt="Billede 2">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back-home">
+        <a href="#">Tilbage til forsiden</a>
+    </div>
 </body>
 </html>
+
