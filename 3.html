@@ -27,9 +27,9 @@
         .recipe {
             display: flex;
             justify-content: center;
-            margin: 20px 0; /* Only space between sections */
-            padding: 0; /* Remove any padding */
-            box-shadow: none; /* Remove any shadow */
+            margin: 20px 0;
+            padding: 0;
+            box-shadow: none;
         }
 
         .recipe img {
@@ -60,6 +60,12 @@
             align-items: center;
         }
 
+        /* Center the image vertically on the right side */
+        .recipe .recipe-images {
+            display: flex;
+            align-items: center; /* Vertically centers the images */
+        }
+
         .recipe-container {
             margin-bottom: 40px;
         }
@@ -83,7 +89,7 @@
         /* Positioning for the back button at the top right */
         .back-button-top {
             position: absolute;
-            top: 100px;
+            top: 150px; /* Adjusted to move button down */
             right: 30px;
             background-color: #4CAF50;
             color: white;
