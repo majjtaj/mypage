@@ -3,119 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Collection</title>
+    <title>Custom Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    
+    <!-- Inline CSS -->
     <style>
         body {
-            background-image: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg');
-            background-repeat: repeat;
-            font-family: Arial, sans-serif;
+            font-family: 'Sue Ellen Francisco', cursive;
+            background: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg') repeat;
             margin: 0;
             padding: 0;
         }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .header {
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
             text-align: center;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
             width: 100%;
         }
-        .header h1 {
-            margin: 0;
-        }
-        .header p {
-            margin: 5px 0 0;
-            font-size: 14px;
-        }
-        .content {
+
+        .container {
             display: flex;
-            width: 80%;
-            margin-top: 10px;
         }
-        .menu {
-            width: 200px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px;
+
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
         }
-        .menu ul {
-            list-style-type: none;
+
+        .sidebar ul {
+            list-style: none;
             padding: 0;
         }
-        .menu li {
+
+        .sidebar ul li {
             margin: 10px 0;
         }
-        .menu a {
-            text-decoration: none;
-            color: black;
+
+        main {
+            margin-left: 270px;
+            padding: 20px;
+            flex: 1;
         }
-        .recipes {
-            flex-grow: 1;
+
+        .content {
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 20px;
+            flex-direction: column;
         }
-        .notepaper {
-            width: 50%;
-            background-image: url('/mnt/data/opskriftsskabelon.png');
-            background-size: cover;
-            padding: 20px;
-            height: 500px;
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
         }
-        .images {
-            width: 50%;
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+
+        .placeholder {
+            margin-left: 20px;
+        }
+
+        .blank-frame, .small-frame {
+            background: rgba(200, 200, 200, 0.5);
+            border: 2px dashed #333;
+            width: 200px;
+            height: 150px;
+        }
+
+        .double-frame {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        .back-button {
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Recipe Collection</h1>
-            <p>A place to store all your favorite recipes</p>
-        </div>
-        <a href="index.html" class="back-button">Back to Home</a>
-        <div class="content">
-            <nav class="menu">
-                <ul>
-                    <li><a href="#A">A</a></li>
-                    <ul>
-                        <li><a href="#A.a">A.a</a></li>
-                        <li><a href="#A.b">A.b</a></li>
-                        <li><a href="#A.c">A.c</a></li>
-                    </ul>
-                    <li><a href="#B">B</a></li>
-                    <ul>
-                        <li><a href="#B.a">B.a</a></li>
-                        <li><a href="#B.b">B.b</a></li>
-                    </ul>
-                    <li><a href="#C">C</a></li>
-                </ul>
-            </nav>
-            <div class="recipes">
-                <div class="notepaper">
-                    <h2>Recipe Title</h2>
-                    <p>Ingredients and instructions go here.</p>
-                </div>
-                <div class="images">
-                    <p>Insert images here.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <!-- Page content goes here (same as before) -->
+    
 </body>
 </html>
-
