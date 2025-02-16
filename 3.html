@@ -3,161 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opskriftsamling</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+    <title>Opskrifter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
         body {
-            background: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg') repeat;
-            font-family: 'Fredoka', sans-serif;
+            background: url('https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739654088/picnic1_u3v771.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Indie Flower', cursive;
             margin: 0;
             padding: 0;
         }
         header {
             text-align: center;
-            font-family: 'Sue Ellen Francisco', cursive;
             font-size: 2em;
             padding: 20px;
-            background: white;
-            position: relative;
-        }
-        header small {
-            display: block;
-            font-size: 0.7em;
-            color: #888;
-        }
-        .home-button {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-            color: black;
+            background: rgba(255, 255, 255, 0.8);
         }
         .container {
             display: flex;
-            max-width: 1200px;
-            margin: auto;
+            align-items: flex-start;
         }
-        .sidebar {
-            width: 250px;
-            position: sticky;
-            top: 0;
-            background: white;
+        .menu {
+            width: 200px;
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
             height: 100vh;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
-        .sidebar ul {
+        .menu ul {
             list-style: none;
             padding: 0;
         }
-        .sidebar li {
+        .menu ul li {
             margin: 10px 0;
         }
+        .menu ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2em;
+        }
         .content {
-            flex: 1;
+            margin-left: 220px;
             padding: 20px;
+            width: 80%;
         }
         .recipe {
             display: flex;
             align-items: flex-start;
             margin-bottom: 40px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
         }
-        .recipe img.template {
-            width: 250px;
+        .recipe .notepaper {
+            background: url('/mnt/data/opskriftsskabelon.png') no-repeat center;
+            background-size: contain;
+            width: 300px;
+            height: 400px;
+            padding: 20px;
         }
         .recipe .images {
-            margin-left: 20px;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 10px;
+            margin-left: 20px;
         }
         .recipe .images img {
-            width: 150px;
+            width: 200px;
             height: auto;
             border-radius: 10px;
         }
         .back-home {
-            text-align: center;
-            padding: 20px;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="home-button">Tilbage til forsiden</a>
-        <h1>Insert heading here</h1>
-        <small>text underneath here</small>
+        <h1>Opskrifter</h1>
     </header>
-    
+    <a href="#" class="back-home">Tilbage til forsiden</a>
     <div class="container">
-        <nav class="sidebar">
+        <nav class="menu">
             <ul>
-                <li>A</li>
-                <ul>
-                    <li>A.a</li>
-                    <li>A.b</li>
-                    <li>A.c</li>
-                </ul>
-                <li>B</li>
-                <ul>
-                    <li>B.a</li>
-                    <li>B.b</li>
-                </ul>
-                <li>C</li>
+                <li><a href="#recipe1">Opskrift 1</a></li>
+                <li><a href="#recipe2">Opskrift 2</a></li>
+                <li><a href="#recipe3">Opskrift 3</a></li>
             </ul>
         </nav>
-        
         <div class="content">
-            <!-- Recipe Section (Repeatable) -->
-            <div class="recipe">
-                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+            <div id="recipe1" class="recipe">
+                <div class="notepaper">Her skrives opskriften</div>
                 <div class="images">
-                    <img src="https://via.placeholder.com/150" alt="Billede 1">
-                    <img src="https://via.placeholder.com/150" alt="Billede 2">
+                    <img src="placeholder.jpg" alt="Billede 1">
+                    <img src="placeholder.jpg" alt="Billede 2">
                 </div>
             </div>
-            
-            <!-- Repeat this block for more recipes -->
-            <div class="recipe">
-                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+            <div id="recipe2" class="recipe">
+                <div class="notepaper">Her skrives opskriften</div>
                 <div class="images">
-                    <img src="https://via.placeholder.com/150" alt="Billede 1">
+                    <img src="placeholder.jpg" alt="Billede 1">
                 </div>
             </div>
-            
-            <div class="recipe">
-                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
+            <div id="recipe3" class="recipe">
+                <div class="notepaper">Her skrives opskriften</div>
                 <div class="images">
-                    <img src="https://via.placeholder.com/150" alt="Billede 1">
-                    <img src="https://via.placeholder.com/150" alt="Billede 2">
-                    <img src="https://via.placeholder.com/150" alt="Billede 3">
-                </div>
-            </div>
-            
-            <div class="recipe">
-                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
-                <div class="images">
-                    <img src="https://via.placeholder.com/150" alt="Billede 1">
-                </div>
-            </div>
-            
-            <div class="recipe">
-                <img src="/mnt/data/opskriftsskabelon.png" class="template" alt="Opskrift skabelon">
-                <div class="images">
-                    <img src="https://via.placeholder.com/150" alt="Billede 1">
-                    <img src="https://via.placeholder.com/150" alt="Billede 2">
+                    <img src="placeholder.jpg" alt="Billede 1">
+                    <img src="placeholder.jpg" alt="Billede 2">
+                    <img src="placeholder.jpg" alt="Billede 3">
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="back-home">
-        <a href="#">Tilbage til forsiden</a>
     </div>
 </body>
 </html>
