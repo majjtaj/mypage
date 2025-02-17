@@ -38,9 +38,13 @@
             margin: 10px;
         }
 
+        /* Rounded corners for the left-side image */
+        .recipe .recipe-content img {
+            border-radius: 10px;
+        }
+
         .recipe .recipe-content {
             max-width: 600px;
-            text-align: center;
             padding-left: 20px;
         }
 
@@ -48,12 +52,13 @@
             font-size: 1.2rem;
             font-weight: bold;
             text-align: left;
-            margin-bottom: 0px;
-            margin-left: 10px;
+            margin-bottom: 10px;
+            margin-left: 0; /* Aligns title to the left */
             background-color: rgba(255, 182, 193, 0.5); /* Light red, 50% transparency */
-            padding: 5px 10px; /* Adds spacing inside the background */
-            border-radius: 5px; /* Soft rounded edges */
-            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block; /* Ensures full-width alignment */
+            width: fit-content;
         }
 
         .double-image img {
@@ -66,6 +71,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center; /* Center images vertically */
+        }
+
+        /* Rounded corners + white frame for images on the right */
+        .recipe .recipe-images img {
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Soft white frame */
         }
 
         /* Center the image vertically on the right side */
@@ -84,16 +95,17 @@
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
-            background-color: none;
+            background-color: transparent; /* Transparent background */
             color: #020802;
             font-size: 1rem;
             text-decoration: none;
             border-radius: 5px;
             text-align: center;
+            border: 1px solid #020802; /* Keeps the button visible */
         }
 
         .button:hover {
-            background-color: #45a049;
+            background-color: rgba(69, 160, 73, 0.2); /* Light green hover effect */
         }
 
         /* Positioning for the back button at the top right */
@@ -101,15 +113,12 @@
             position: absolute;
             top: 150px; /* Adjusted to move button down */
             right: 30px;
-            background-color: none;
+            background-color: transparent; /* Transparent background */
             color: #020802;
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-        }
-
-        .back-button-top:hover {
-            background-color: none;
+            border: 1px solid #020802;
         }
 
         .footer {
@@ -155,27 +164,6 @@
                 <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
             </div>
         </div>
-
-        <div class="recipe">
-            <div class="recipe-content">
-                <div class="recipe-title">Opskrift på muffins</div>
-                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
-            </div>
-            <div class="double-image">
-                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
-                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
-            </div>
-        </div>
-
-        <div class="recipe">
-            <div class="recipe-content">
-                <div class="recipe-title">Opskrift på muffins</div>
-                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739701147/opskriftsskabelon_ochtg2.png" alt="Muffins recipe image">
-            </div>
-            <div class="recipe-images">
-                <img src="https://res.cloudinary.com/dgtrxxwdj/image/upload/v1739704667/muffins1_hajvfk.jpg" alt="Muffins image">
-            </div>
-        </div>
     </div>
 
     <div class="footer">
@@ -183,3 +171,4 @@
     </div>
 </body>
 </html>
+
