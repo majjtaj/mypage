@@ -10,7 +10,7 @@ body {
   display: inline-block;
 }
 
-#dice {
+#dice, #single-dice {
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
@@ -25,9 +25,9 @@ body {
   flex-wrap: wrap;
 }
 
-
 button {
   margin-top: 20px;
+  margin-bottom: 40px;
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
@@ -35,7 +35,14 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  align-items: center;
+  /* align-items: center;  <-- remove this */
+}
+
+/* Container for single dice + button */
+.single-dice-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers the dice and button */
   margin-bottom: 40px;
 }
 
@@ -54,4 +61,3 @@ button {
 .back-button:hover {
   background-color: #005fa3;
 }
-
