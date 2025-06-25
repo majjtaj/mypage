@@ -36,3 +36,20 @@ button {
   border: none;
   border-radius: 5px;
 }
+
+.back-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #005fa3;
+}
+
