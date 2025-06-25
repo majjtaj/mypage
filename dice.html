@@ -6,28 +6,29 @@
   <link rel="stylesheet" href="dice-style.css">
 </head>
 <body>
-  <h1>Skal du bruge en terning?</h1>
-  <div class="single-dice-section">
-  <div class="dice-wrap">
-    <img id="single-dice" src="images/dice1.png" alt="Dice">
+  <main>
+    <h1>Skal du bruge en terning?</h1>
+    <div class="single-dice-section">
+    <div class="dice-wrap">
+      <img id="single-dice" src="images/dice1.png" alt="Dice">
+    </div>
+    <button onclick="rollSingleDice()">Roll Dice</button>
   </div>
-  <button onclick="rollSingleDice()">Roll Dice</button>
-</div>
+      
+    <h1>Eller en hel håndfuld?</h1>
     
-  <h1>Eller en hel håndfuld?</h1>
-  
-  <div class="dice-row">
-  <div class="dice-wrap"><img id="dice1" src="images/dice1.png" alt="Dice 1"></div>
-  <div class="dice-wrap"><img id="dice2" src="images/dice1.png" alt="Dice 2"></div>
-  <div class="dice-wrap"><img id="dice3" src="images/dice1.png" alt="Dice 3"></div>
-  <div class="dice-wrap"><img id="dice4" src="images/dice1.png" alt="Dice 4"></div>
-  <div class="dice-wrap"><img id="dice5" src="images/dice1.png" alt="Dice 5"></div>
-  <div class="dice-wrap"><img id="dice6" src="images/dice1.png" alt="Dice 6"></div>
-</div>
+    <div class="dice-row">
+    <div class="dice-wrap"><img id="dice1" src="images/dice1.png" alt="Dice 1"></div>
+    <div class="dice-wrap"><img id="dice2" src="images/dice1.png" alt="Dice 2"></div>
+    <div class="dice-wrap"><img id="dice3" src="images/dice1.png" alt="Dice 3"></div>
+    <div class="dice-wrap"><img id="dice4" src="images/dice1.png" alt="Dice 4"></div>
+    <div class="dice-wrap"><img id="dice5" src="images/dice1.png" alt="Dice 5"></div>
+    <div class="dice-wrap"><img id="dice6" src="images/dice1.png" alt="Dice 6"></div>
+  </div>
+      
+  <button onclick="rollAllDice()">Roll All Dice</button>
 
-  
-    
-<button onclick="rollAllDice()">Roll All Dice</button>
+  </main>
 
   <script src="dice-script.js"></script>
 
