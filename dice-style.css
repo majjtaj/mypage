@@ -17,6 +17,14 @@ body {
   transition: transform 0.12s linear;   /* smooth between frames */
 }
 
+.dice-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
 
 button {
   margin-top: 20px;
