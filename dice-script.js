@@ -12,7 +12,7 @@ function rollDice() {
     if (currentRoll >= rollCount) {
       clearInterval(interval);
       const final = Math.floor(Math.random() * 6) + 1;
-      dice.src = `dice${final}.png`;
+      dice.src = `images/dice${num}.png`;
       dice.style.transform = `rotate(0deg)`;
     }
   }, 100);
