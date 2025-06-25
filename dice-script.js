@@ -30,3 +30,31 @@ function rollDice() {
     }
   }, 100);
 }
+
+function rollSingleDice() {
+  const dice = document.getElementById('single-dice');
+  let angleX = 0;
+  let angleY = 0;
+  let spins = 20;
+  let count = 0;
+
+  const intervalID = setInterval(() => {
+    const face = Math.floor(Math.random() * 6) + 1;
+    dice.src = `images/dice${face}.png`;
+    angleX += 90;
+    angleY += 90;
+    dice.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+    count++;
+
+    if (count >= spins) {
+      clearInterval(intervalID);
+      const final = Math.floor(Math.random() * 6) + 1;
+      dice.src = `images/dice${final}.png`;
+      dice.style.transition = 'transform 0.4s ease-out';
+      dice.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      dice.addEventListener('transitionend', () => {
+        dice.style.transition = 'transform 0.12s linear';
+      }, { once: true });
+    }
+  }, 60);
+}
