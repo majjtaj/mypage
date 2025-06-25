@@ -5,11 +5,16 @@ body {
   background-color: #f2f2f2;
 }
 
-img {
+#dice {
   width: 100px;
   height: 100px;
   transition: transform 0.2s;
+  transform-style: preserve-3d;
+  perspective: 600px; /* add this for 3D depth */
+  margin: 0 auto;
+  display: block;
 }
+
 
 button {
   margin-top: 20px;
