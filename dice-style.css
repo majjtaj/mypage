@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  padding-top: 50px;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.2s;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
