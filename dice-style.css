@@ -5,14 +5,16 @@ body {
   background-color: #C04050;
 }
 
+.dice-wrap {
+  perspective: 600px;
+  display: inline-block;
+}
+
 #dice {
   width: 100px;
   height: 100px;
-  transition: transform 0.2s;
   transform-style: preserve-3d;
-  perspective: 600px; /* add this for 3D depth */
-  margin: 0 auto;
-  display: block;
+  transition: transform 0.12s linear;   /* smooth between frames */
 }
 
 
